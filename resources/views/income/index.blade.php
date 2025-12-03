@@ -4,7 +4,7 @@
 
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 bg-gray-50">
 
-```
+
 <!-- Header -->
 <div class="mb-16 text-center">
     <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 tracking-wide">Income</h1>
@@ -34,8 +34,8 @@
         </div>
         <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
          <a href="{{ route('income.create') }}"
-         class="w-12 h-12 flex items-center justify-center rounded-full  text-black shadow-md hover:shadow-lg transition hover:bg-blue-700" style="background-color: #2563eb">
-              <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor">
+         class="w-12 h-12 flex items-center justify-center rounded-full  text-black shadow-md hover:shadow-lg transition hover:bg-blue-700" style="background-color: #091838">
+              <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" style="color: rgb(253, 249, 249) !important;">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
             </svg>
          </a>
@@ -52,8 +52,8 @@
         </div>
         <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
          <a href="{{ route('income.create') }}"
-         class="w-12 h-12 flex items-center justify-center rounded-full  text-black shadow-md hover:shadow-lg transition hover:bg-blue-700" style="background-color: #2563eb">
-              <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor">
+         class="w-12 h-12 flex items-center justify-center rounded-full  text-black shadow-md hover:shadow-lg transition hover:bg-blue-700" style="background-color: #042d06">
+              <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" style="color: rgb(253, 249, 249) !important;">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
             </svg>
          </a>
@@ -125,7 +125,7 @@
 @else
     <div class="bg-white rounded-xl shadow-md border border-gray-200 p-12 text-center">
         <div class="w-16 h-16 bg-gray-100 rounded-full mx-auto mb-4 flex items-center justify-center">
-            <svg class="w-8 h-8 text-gray-400" fill="none" stroke="currentColor">
+            <svg class="w-8 h-8 text-gray-400" fill="none" stroke="currentColor" style="color: rgb(253, 249, 249) !important;">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
             </svg>
         </div>
@@ -133,7 +133,7 @@
         <p class="text-sm text-gray-600 mb-6">Get started by adding your first income transaction.</p>
         <a href="{{ route('income.create') }}"
            class="inline-flex items-center px-5 py-2.5 font-semibold rounded-lg bg-blue-600 text-white hover:bg-blue-700 transition">
-            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor">
+            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" style="color: rgb(253, 249, 249) !important;">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
             </svg>
             Add Income
@@ -148,7 +148,6 @@
         <canvas id="incomeChart"></canvas>
     </div>
 </div>
-```
 
 </div>
 
