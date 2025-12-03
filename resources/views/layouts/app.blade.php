@@ -101,19 +101,7 @@
                     @yield('content')
                 </main>
                 
-                <!-- Footer -->
-                <footer class="flex-shrink-0 min-w-0 text-gray-400 py-3 px-4 border-t border-gray-800" style="background-color: #000000 !important; width: 100%;">
-                    <div class="w-full flex flex-col sm:flex-row items-center justify-between gap-2">
-                        <div class="flex flex-col sm:flex-row items-center gap-3 text-sm">
-                            <span>© {{ date('Y') }} Finance Manager</span>
-                            <div class="flex items-center gap-3">
-                                <a href="#" class="hover:text-gray-300 transition-colors">Terms</a>
-                                <a href="#" class="hover:text-gray-300 transition-colors">Privacy</a>
-                                <a href="#" class="hover:text-gray-300 transition-colors">Cookies</a>
-                            </div>
-                        </div>
-                    </div>
-                </footer>
+                
             </div>
         </div>
         @else
@@ -124,18 +112,6 @@
             </main>
             
           <!-- Footer -->
-<footer class="w-full text-gray-400 py-3 px-6 border-t border-gray-800 bg-black">
-    <div class="flex flex-col sm:flex-row items-center justify-between gap-2 max-w-screen-xl mx-auto">
-        <div class="flex flex-col sm:flex-row items-center gap-3 text-sm">
-            <span>© {{ date('Y') }} Finance Manager</span>
-            <div class="flex items-center gap-3">
-                <a href="#" class="hover:text-gray-300 transition-colors">Terms</a>
-                <a href="#" class="hover:text-gray-300 transition-colors">Privacy</a>
-                <a href="#" class="hover:text-gray-300 transition-colors">Cookies</a>
-            </div>
-        </div>
-    </div>
-</footer>
 
         </div>
         @endauth

@@ -18,7 +18,7 @@
 
         <!-- Header -->
         <div class="bg-gradient-to-r from-blue-700 to-blue-500 px-8 pt-16 pb-10 text-center">
-            <h2 class="text-3xl font-extrabold text-white tracking-wide">Create Account</h2>
+            <h2 class="text-3xl font-extrabold text-black tracking-wide">Create Account</h2>
             <p class="text-blue-100 text-sm mt-2">Join us and manage your finance easily</p>
         </div>
 
@@ -80,7 +80,7 @@
 
                 <!-- Submit -->
                 <button type="submit"
-                        class="w-full py-3 bg-gradient-to-r from-blue-700 to-blue-900 text-white font-bold rounded-xl
+                        class="w-full py-3 bg-gradient-to-r from-blue-700 to-blue-900 text-black font-bold rounded-xl
                                shadow-lg hover:shadow-xl transform hover:-translate-y-0.5
                                transition-all duration-200 text-sm">
                     Create Account
