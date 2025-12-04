@@ -73,6 +73,7 @@ class IncomeController extends Controller
      * Store a newly created income in storage.
      */
     public function store(Request $request)
+
     {
         $validated = $request->validate([
             'bank_id' => 'nullable|exists:banks,id',
@@ -93,8 +94,10 @@ class IncomeController extends Controller
 
         Income::create($validated);
 
-        return redirect()->route('income.index')->with('status', 'Income added successfully!');
+        return redirect()->route('income.index')->with('success', 'Income added successfully!');
     }
+
+
 
     /**
      * Display a single income.

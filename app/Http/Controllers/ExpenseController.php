@@ -6,14 +6,55 @@ use App\Models\Expense;
 use App\Models\Category;
 use App\Models\Bank;
 use Illuminate\Http\Request;
+use Carbon\Carbon;
 
 class ExpenseController extends Controller
 {
-    public function index()
-    {
-        $expenses = Expense::where('user_id', auth()->id())->with(['bank', 'category'])->latest()->paginate(10);
-        return view('expenses.index', compact('expenses'));
+   public function index(Request $request)
+{
+    $query = Expense::where('user_id', auth()->id())->with(['bank', 'category']);
+
+    // Filter by currency if requested
+    if ($request->currency) {
+        $query->where('currency', $request->currency);
     }
+
+    // Filter by category if requested
+    if ($request->category_id) {
+        $query->where('category_id', $request->category_id);
+    }
+
+    // Filter by search keyword
+    if ($request->search) {
+        $query->where(function($q) use ($request) {
+            $q->whereHas('category', fn($q) => $q->where('name', 'like', '%'.$request->search.'%'))
+              ->orWhereHas('bank', fn($q) => $q->where('bank_name', 'like', '%'.$request->search.'%'))
+              ->orWhere('currency', 'like', '%'.$request->search.'%');
+        });
+    }
+
+    $expenses = $query->latest()->paginate(10);
+
+    // Totals
+    $etbTotal = Expense::where('user_id', auth()->id())->where('currency', 'ETB')->sum('amount');
+    $usdTotal = Expense::where('user_id', auth()->id())->where('currency', 'USD')->sum('amount');
+
+    // Monthly data for chart
+    $months = [];
+    $monthlyAmounts = [];
+    for ($i = 1; $i <= 12; $i++) {
+        $months[] = date('M', mktime(0, 0, 0, $i, 1));
+        $monthlyAmounts[] = Expense::where('user_id', auth()->id())
+            ->whereMonth('occurred_at', $i)
+            ->sum('amount');
+    }
+
+    // Fetch all categories for filter dropdown
+    $categories = Category::where('user_id', auth()->id())->get();
+
+    return view('expenses.index', compact('expenses', 'etbTotal', 'usdTotal', 'months', 'monthlyAmounts', 'categories'));
+}
+
 
     public function create()
     {
