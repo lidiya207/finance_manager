@@ -52,6 +52,15 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/loans/create', [LoanController::class, 'create'])->name('loans.create');
     Route::post('/loans/store', [LoanController::class, 'store'])->name('loans.store');
     Route::get('/loans/index', [LoanController::class, 'index'])->name('loans.index');
+    Route::get('/loans/{id}', [LoanController::class, 'show'])->name('loans.show');
+    Route::get('/loans/{id}/edit', [LoanController::class, 'edit'])->name('loans.edit');
+    Route::put('/loans/{id}', [LoanController::class, 'update'])->name('loans.update');
+    Route::delete('/loans/{id}', [LoanController::class, 'destroy'])->name('loans.destroy');
+
+    // Loan Exports
+    // Route::get('/loans/export/pdf', [LoanController::class, 'exportPdf'])->name('loans.export.pdf');
+    // Route::get('/loans/export/excel', [LoanController::class, 'exportExcel'])->name('loans.export.excel');
+
 
     // Categories
     Route::get('/categories/index', [CategoryController::class, 'index'])->name('categories.index');

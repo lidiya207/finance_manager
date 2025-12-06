@@ -7,7 +7,8 @@
 
 <!-- Header -->
 <div class="mb-16 text-center">
-    <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 tracking-wide">Income</h1>
+    <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 tracking-wide" style="margin-top: 2rem; margin-bottom: 1rem; font-size: 25px;"
+>Income</h1>
     <p class="text-gray-600 text-lg mt-2">Track and manage your income transactions</p>
 
     <div class="mt-12 flex justify-center gap-4" style="margin-top: 2rem; margin-bottom: 4rem;">
