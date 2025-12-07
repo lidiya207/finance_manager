@@ -33,7 +33,11 @@ class ExpenseController extends Controller
         });
     }
 
-    $expenses = $query->latest()->paginate(10);
+    if ($request->has('show_all') && $request->show_all == '1') {
+        $expenses = $query->latest()->paginate(1000);
+    } else {
+        $expenses = $query->latest()->paginate(10);
+    }
 
     // Totals
     $etbTotal = Expense::where('user_id', auth()->id())->where('currency', 'ETB')->sum('amount');

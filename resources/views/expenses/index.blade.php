@@ -102,14 +102,39 @@
                         - {{ number_format($expense->amount, 2) }}
                     </p>
                     <p class="text-xs text-gray-500 mt-1">{{ $expense->currency }}</p>
+                    <form action="{{ route('expenses.destroy', $expense->id) }}" method="POST" class="inline-block mt-2" onsubmit="return confirm('Are you sure you want to delete this record?');">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="text-red-500 hover:text-red-700 transition-colors" title="Delete Record">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path>
+                            </svg>
+                        </button>
+                    </form>
                 </div>
             </div>
         </div>
         @endforeach
     </div>
 
-    <div class="mt-6 flex justify-center">
-        {{ $expenses->links() }}
+    <div class="mt-6 flex flex-col items-center gap-4">
+        {{ $expenses->appends(request()->query())->links() }}
+        
+        @if($expenses->total() > 10)
+            <div class="text-center">
+                @if(request('show_all'))
+                    <a href="{{ route('expenses.index', array_merge(request()->except('show_all'))) }}" 
+                       class="inline-flex items-center px-4 py-2 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50">
+                        Show Less
+                    </a>
+                @else
+                    <a href="{{ route('expenses.index', array_merge(request()->query(), ['show_all' => 1])) }}" 
+                       class="inline-flex items-center px-4 py-2 border border-red-600 shadow-sm text-sm font-medium rounded-md text-red-600 bg-white hover:bg-red-50">
+                        Show All
+                    </a>
+                @endif
+            </div>
+        @endif
     </div>
 @else
     <!-- Empty State -->

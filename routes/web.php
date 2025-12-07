@@ -42,11 +42,13 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/income/create', [IncomeController::class, 'create'])->name('income.create');
     Route::post('/income/store', [IncomeController::class, 'store'])->name('income.store');
     Route::get('/income/index', [IncomeController::class, 'index'])->name('income.index');
+    Route::delete('/income/{id}', [IncomeController::class, 'destroy'])->name('income.destroy');
 
     // Expense
     Route::get('/expenses/create', [ExpenseController::class, 'create'])->name('expenses.create');
     Route::post('/expenses/store', [ExpenseController::class, 'store'])->name('expenses.store');
     Route::get('/expenses/index', [ExpenseController::class, 'index'])->name('expenses.index');
+    Route::delete('/expenses/{id}', [ExpenseController::class, 'destroy'])->name('expenses.destroy');
 
     // Loan
     Route::get('/loans/create', [LoanController::class, 'create'])->name('loans.create');

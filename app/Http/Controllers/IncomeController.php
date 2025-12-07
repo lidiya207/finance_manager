@@ -29,7 +29,11 @@ class IncomeController extends Controller
             });
         }
 
-        $incomes = $query->paginate(10);
+        if ($request->has('show_all') && $request->show_all == '1') {
+            $incomes = $query->paginate(1000); // effectively "all"
+        } else {
+            $incomes = $query->paginate(10);
+        }
 
         // 📊 Monthly income chart data
         $months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul',
