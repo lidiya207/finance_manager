@@ -143,6 +143,7 @@
                 <select id="bank_id" 
                         name="bank_id" 
                         required
+                        style="appearance: auto; -webkit-appearance: menulist; -moz-appearance: menulist;"
                         class="block w-full px-4 py-3 text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-all @error('bank_id') border-red-500 @enderror">
                     <option value="">Select a bank</option>
                     @foreach($banks as $bank)

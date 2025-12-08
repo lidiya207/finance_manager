@@ -47,30 +47,25 @@
             @enderror
         </div>
 
-        <!-- Category (Dynamic) -->
+        <!-- Category -->
         <div>
-            <label for="category_name" class="block text-sm font-medium text-gray-900 mb-2">
+            <label for="category_id" class="block text-sm font-medium text-gray-900 mb-2">
                 Category <span class="text-red-500">*</span>
             </label>
-            <input type="text" 
-                   id="category_name" 
-                   name="category_name" 
-                   list="category_list"
-                   autocomplete="off"
-                   required
-                   value="{{ old('category_name') }}"
-                   placeholder="Type or select a category"
-                   class="block w-full px-4 py-3 text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-all @error('category_id') border-red-500 @enderror">
-            <datalist id="category_list">
+            <select id="category_id" 
+                    name="category_id" 
+                    required
+                    class="block w-full px-4 py-3 text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-all @error('category_id') border-red-500 @enderror">
+                <option value="">Select a category</option>
                 @foreach($categories as $category)
-                    <option value="{{ $category->name }}" data-id="{{ $category->id }}">
+                    <option value="{{ $category->id }}" {{ old('category_id') == $category->id ? 'selected' : '' }}>
+                        {{ $category->name }}
+                    </option>
                 @endforeach
-            </datalist>
-            <input type="hidden" id="category_id" name="category_id" value="{{ old('category_id') }}">
+            </select>
             @error('category_id')
                 <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
             @enderror
-            <p class="mt-2 text-xs text-gray-500">Type a new category to create it automatically</p>
         </div>
 
         <!-- Bank (Dynamic) -->
@@ -163,20 +158,6 @@ document.addEventListener('DOMContentLoaded', function() {
             bankIdInput.value = selectedOption.getAttribute('data-id');
         } else {
             bankIdInput.value = '';
-        }
-    });
-
-    // Category input
-    const categoryInput = document.getElementById('category_name');
-    const categoryIdInput = document.getElementById('category_id');
-    const categoryList = document.getElementById('category_list');
-
-    categoryInput.addEventListener('input', function() {
-        const selectedOption = Array.from(categoryList.options).find(option => option.value === this.value);
-        if (selectedOption) {
-            categoryIdInput.value = selectedOption.getAttribute('data-id');
-        } else {
-            categoryIdInput.value = '';
         }
     });
 });

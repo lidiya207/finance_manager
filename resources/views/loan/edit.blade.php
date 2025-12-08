@@ -65,7 +65,9 @@
         {{-- Bank --}}
         <div>
             <label class="block font-medium">Bank</label>
-            <select name="bank_id" class="w-full border rounded-lg px-3 py-2">
+            <select name="bank_id" 
+                    style="appearance: auto; -webkit-appearance: menulist; -moz-appearance: menulist;"
+                    class="w-full border rounded-lg px-3 py-2">
                 @foreach($banks as $bank)
                     <option value="{{ $bank->id }}" {{ $loan->bank_id == $bank->id ? 'selected' : '' }}>
                         {{ $bank->bank_name }} ({{ $bank->currency }})
