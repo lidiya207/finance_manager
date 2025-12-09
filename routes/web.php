@@ -63,6 +63,14 @@ Route::middleware(['auth'])->group(function () {
     // Route::get('/loans/export/pdf', [LoanController::class, 'exportPdf'])->name('loans.export.pdf');
     // Route::get('/loans/export/excel', [LoanController::class, 'exportExcel'])->name('loans.export.excel');
 
+    // Banks
+    Route::get('/banks/index', [BankController::class, 'index'])->name('banks.index');
+    Route::get('/banks/create', [BankController::class, 'create'])->name('banks.create');
+    Route::post('/banks/store', [BankController::class, 'store'])->name('banks.store');
+    Route::get('/banks/{id}/edit', [BankController::class, 'edit'])->name('banks.edit');
+    Route::put('/banks/{id}', [BankController::class, 'update'])->name('banks.update');
+    Route::delete('/banks/{id}', [BankController::class, 'destroy'])->name('banks.destroy');
+
 
     // Categories
     Route::get('/categories/index', [CategoryController::class, 'index'])->name('categories.index');

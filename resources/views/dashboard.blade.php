@@ -155,8 +155,8 @@
                         <span class="text-xs font-semibold text-emerald-600 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-900/30 px-3 py-1 rounded-full">Income</span>
                     </div>
                     <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">Manage Income</h3>
-                    <p class="text-sm text-slate-600 dark:text-slate-400 mb-4">Track and manage your income sources</p>
-                    <div class="flex gap-2">
+                    <p class="text-sm text-slate-600 dark:text-slate-400 mb-4 h-10 overflow-hidden">Track and manage your income sources</p>
+                    <div class="flex flex-col sm:flex-row gap-2">
                         <a href="{{ route('income.create') }}"
                            class="flex-1 bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded-xl text-center text-sm font-semibold transition-colors">
                             Add
@@ -179,8 +179,8 @@
                         <span class="text-xs font-semibold text-red-600 dark:text-red-400 bg-red-50 dark:bg-red-900/30 px-3 py-1 rounded-full">Expense</span>
                     </div>
                     <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">Manage Expenses</h3>
-                    <p class="text-sm text-slate-600 dark:text-slate-400 mb-4">Monitor and control your spending</p>
-                    <div class="flex gap-2">
+                    <p class="text-sm text-slate-600 dark:text-slate-400 mb-4 h-10 overflow-hidden">Monitor and control your spending</p>
+                    <div class="flex flex-col sm:flex-row gap-2">
                         <a href="{{ route('expenses.create') }}"
                            class="flex-1 bg-red-600 hover:bg-red-700 text-white py-2 px-4 rounded-xl text-center text-sm font-semibold transition-colors">
                             Add
@@ -203,8 +203,8 @@
                         <span class="text-xs font-semibold text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/30 px-3 py-1 rounded-full">Loan</span>
                     </div>
                     <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">Manage Loans</h3>
-                    <p class="text-sm text-slate-600 dark:text-slate-400 mb-4">Keep track of your loan records</p>
-                    <div class="flex gap-2">
+                    <p class="text-sm text-slate-600 dark:text-slate-400 mb-4 h-10 overflow-hidden">Keep track of your loan records</p>
+                    <div class="flex flex-col sm:flex-row gap-2">
                         <a href="{{ route('loans.create') }}"
                            class="flex-1 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-xl text-center text-sm font-semibold transition-colors">
                             Add
@@ -250,13 +250,13 @@
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
                     </svg>
                 </div>
-                <div class="grid grid-cols-2 gap-4">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div class="bg-slate-50 dark:bg-slate-800 rounded-2xl p-4">
-                        <p class="text-xs text-slate-600 dark:text-slate-400 mb-1">Transactions</p>
+                        <p class="text-xs text-slate-600 dark:text-slate-400 mb-1 truncate">Transactions</p>
                         <p class="text-2xl font-bold text-slate-900 dark:text-white">{{ $incomeByCurrency->count() + $expensesByCurrency->count() }}</p>
                     </div>
                     <div class="bg-slate-50 dark:bg-slate-800 rounded-2xl p-4">
-                        <p class="text-xs text-slate-600 dark:text-slate-400 mb-1">Categories</p>
+                        <p class="text-xs text-slate-600 dark:text-slate-400 mb-1 truncate">Categories</p>
                         <p class="text-2xl font-bold text-slate-900 dark:text-white">Active</p>
                     </div>
                 </div>
