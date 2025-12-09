@@ -21,11 +21,11 @@
         <p class="text-gray-600 text-sm">Record a new expense transaction</p>
     </div>
 
-    <form method="POST" action="{{ route('expenses.store') }}" class="space-y-6" id="expenseForm">
+    <form method="POST" action="{{ route('expenses.store') }}" class="space-y-8" id="expenseForm">
         @csrf
 
         <!-- Amount -->
-        <div>
+        <div class="mb-6">
             <label for="amount" class="block text-sm font-medium text-gray-900 mb-2">
                 Amount <span class="text-red-500">*</span>
             </label>
@@ -48,14 +48,15 @@
         </div>
 
         <!-- Category -->
-        <div>
+        <div class="mb-6" style="margin-bottom: 2rem;">
             <label for="category_id" class="block text-sm font-medium text-gray-900 mb-2">
                 Category <span class="text-red-500">*</span>
             </label>
             <select id="category_id" 
                     name="category_id" 
                     required
-                    class="block w-full px-4 py-3 text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-all @error('category_id') border-red-500 @enderror">
+                    class="block w-full px-4 py-3 text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-all @error('category_id') border-red-500 @enderror"
+                    style="position: relative; z-index: 10;">
                 <option value="">Select a category</option>
                 @foreach($categories as $category)
                     <option value="{{ $category->id }}" {{ old('category_id') == $category->id ? 'selected' : '' }}>
@@ -69,7 +70,7 @@
         </div>
 
         <!-- Bank (Dynamic) -->
-        <div>
+        <div class="mb-6" style="margin-top: 2rem;">
             <label for="bank_name" class="block text-sm font-medium text-gray-900 mb-2">
                 Bank <span class="text-red-500">*</span>
             </label>
@@ -95,7 +96,7 @@
         </div>
 
         <!-- Currency -->
-        <div>
+        <div class="mb-6">
             <label for="currency" class="block text-sm font-medium text-gray-900 mb-2">
                 Currency <span class="text-red-500">*</span>
             </label>
@@ -115,7 +116,7 @@
         </div>
 
         <!-- Date -->
-        <div>
+        <div class="mb-6">
             <label for="occurred_at" class="block text-sm font-medium text-gray-900 mb-2">
                 Date <span class="text-red-500">*</span>
             </label>

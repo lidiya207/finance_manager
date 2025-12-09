@@ -20,11 +20,11 @@
             <p class="text-gray-600 text-sm">Record a new loan transaction</p>
         </div>
 
-        <form method="POST" action="{{ route('loans.store') }}" class="space-y-6">
+        <form method="POST" action="{{ route('loans.store') }}" class="space-y-8">
             @csrf
 
             <!-- Loan Type -->
-            <div>
+            <div class="mb-6">
                 <label for="type" class="block text-sm font-medium text-gray-900 mb-2">
                     Loan Type <span class="text-red-500">*</span>
                 </label>
@@ -42,7 +42,7 @@
             </div>
 
             <!-- Person Name -->
-            <div>
+            <div class="mb-6">
                 <label for="person_name" class="block text-sm font-medium text-gray-900 mb-2">
                     Person Name <span class="text-red-500">*</span>
                 </label>
@@ -59,7 +59,7 @@
             </div>
 
             <!-- Person Contact -->
-            <div>
+            <div class="mb-6">
                 <label for="person_contact" class="block text-sm font-medium text-gray-900 mb-2">
                     Contact (Optional)
                 </label>
@@ -75,7 +75,7 @@
             </div>
 
             <!-- Reason -->
-            <div>
+            <div class="mb-6">
                 <label for="reason" class="block text-sm font-medium text-gray-900 mb-2">
                     Reason (Optional)
                 </label>
@@ -90,7 +90,7 @@
             </div>
 
             <!-- Principal Amount -->
-            <div>
+            <div class="mb-6">
                 <label for="principal_amount" class="block text-sm font-medium text-gray-900 mb-2">
                     Principal Amount <span class="text-red-500">*</span>
                 </label>
@@ -113,7 +113,7 @@
             </div>
 
             <!-- Outstanding Balance -->
-            <div>
+            <div class="mb-6">
                 <label for="outstanding_balance" class="block text-sm font-medium text-gray-900 mb-2">
                     Outstanding Balance <span class="text-red-500">*</span>
                 </label>
@@ -136,7 +136,7 @@
             </div>
 
             <!-- Bank -->
-            <div>
+            <div class="mb-6">
                 <label for="bank_id" class="block text-sm font-medium text-gray-900 mb-2">
                     Bank <span class="text-red-500">*</span>
                 </label>
@@ -158,7 +158,7 @@
             </div>
 
             <!-- Currency -->
-            <div>
+            <div class="mb-6">
                 <label for="currency" class="block text-sm font-medium text-gray-900 mb-2">
                     Currency <span class="text-red-500">*</span>
                 </label>
@@ -178,7 +178,7 @@
             </div>
 
             <!-- Status -->
-            <div>
+            <div class="mb-6">
                 <label for="status" class="block text-sm font-medium text-gray-900 mb-2">
                     Status <span class="text-red-500">*</span>
                 </label>
