@@ -6,7 +6,7 @@
     --accent-gradient: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
     --success-gradient: linear-gradient(135deg, #059669 0%, #10b981 100%);
     --danger-gradient: linear-gradient(135deg, #dc2626 0%, #ef4444 100%);
-    --info-gradient: linear-gradient(135deg, #0ea5e9 0%, #38bdf8 100%);
+    --info-gradient: linear-gradient(135deg, #0ea5e9 0%, #32b2e9 100%);
     --warning-gradient: linear-gradient(135deg, #d97706 0%, #f59e0b 100%);
     --dark-gradient: linear-gradient(135deg, #1e293b 0%, #334155 100%);
 }
