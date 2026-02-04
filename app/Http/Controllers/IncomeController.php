@@ -29,6 +29,11 @@ class IncomeController extends Controller
             });
         }
 
+        // 💰 Currency filter
+        if ($request->filled('currency')) {
+            $query->where('currency', $request->currency);
+        }
+
         if ($request->has('show_all') && $request->show_all == '1') {
             $incomes = $query->paginate(1000); // effectively "all"
         } else {

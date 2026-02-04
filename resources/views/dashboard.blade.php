@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', 'Financial Dashboard - Finance Manager')
+
 @section('content')
 <!-- Professional Dashboard with Slate Background -->
 <div class="min-h-screen bg-slate-50 py-8">
